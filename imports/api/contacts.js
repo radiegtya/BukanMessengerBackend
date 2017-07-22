@@ -20,7 +20,8 @@ if(Meteor.isServer){
           Contacts.upsert({userId: user._id, ownerId: this.userId}, {
             $set: {
               userId: user._id,
-              ownerId: this.userId
+              ownerId: this.userId,
+              user: user
             }
           });
         }

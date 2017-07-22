@@ -27,11 +27,23 @@ if(Meteor.isServer){
             firstUser, //assign contact user
             secondUser, //assign current loggedIn user
           ],
-          lastMessage: ''
+          lastMessage: {
+            createdAt: new Date()
+          }
         });
       }
 
       return chatId;
+    },
+    'chats.initGroup'(name, members){
+      Chats.insert({
+        name: name,
+        type: 'group',
+        members: members,
+        lastMessage: {
+          createdAt: new Date()
+        }
+      });
     }
   });
 

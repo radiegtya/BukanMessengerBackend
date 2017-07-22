@@ -5,6 +5,7 @@ import {Accounts} from 'meteor/accounts-base';
 if(Meteor.isServer){
 
   Meteor.publish('users', (selector = {}, options = {})=>{
+    console.log('subscribing users');
     return Meteor.users.find(selector, options);
   });
 

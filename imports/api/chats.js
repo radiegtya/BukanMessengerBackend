@@ -17,26 +17,30 @@ if(Meteor.isServer){
       });
 
       let chatId = null;
+      const doc = {
+        name: '',
+        type: 'private',
+        members: [
+          firstUser, //assign contact user
+          secondUser, //assign current loggedIn user
+        ],
+        lastMessage: {
+          createdAt: new Date()
+        }
+      };
+
+      //if chat exists, upsert the chat to prevent duplicate chat that can cause data rubbish
       if(chat){
         chatId = chat._id;
+        Chats.upsert(chatId, doc);
       }else{
-        Chats.insert({
-          name: '',
-          type: 'private',
-          members: [
-            firstUser, //assign contact user
-            secondUser, //assign current loggedIn user
-          ],
-          lastMessage: {
-            createdAt: new Date()
-          }
-        });
+        chatId = Chats.insert(doc);
       }
 
       return chatId;
     },
     'chats.initGroup'(name, members){
-      Chats.insert({
+      const chatId = Chats.insert({
         name: name,
         type: 'group',
         members: members,
@@ -44,6 +48,8 @@ if(Meteor.isServer){
           createdAt: new Date()
         }
       });
+
+      return chatId;
     }
   });
 

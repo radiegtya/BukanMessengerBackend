@@ -1,25 +1,27 @@
 
 <h1 align="center">
-  <img src="./logo.png"/><br>
+  <img src="https://github.com/radiegtya/BukanMessenger/blob/master/logo.png"/><br>
   BukanMessenger
 </h1>
 
-## Important
-This project is still on very early development stage. If you want to use for production, use it with your own risk.
-<br><br>More feature Coming Really Soon.
-<br>You are not recommended to give pull request for now, although You can fork this anytime.
-
-## BukanMessenger
+## BukanMessenger Backend
 
 BukanMessenger is a Messenger app build on top React Native and Meteor Js. 
 It is customizeable and some new feature will coming soon every week.
-
-<img src="https://github.com/wix/react-native/blob/master/src/videos/demo.gif?raw=true" width="300">&nbsp;&nbsp;&nbsp;&nbsp;
+This is the backend of BukanMessenger that built on top MeteorJS
 
 ## Why BukanMessenger?
 * It's React Native, so it support android & iOS by default!
 * Simple Code, so you can easily contribute on it.
 * Meteor is one of the most starred javascript framework, and it is very easy to use
+
+## Installation
+```
+$ git clone https://github.com/radiegtya/BukanMessengerBackend
+$ cd BukanMessengerBackend
+$ meteor npm install
+$ meteor #run your meteor on http://localhost:3000
+```
 
 ## Support Us :)
 * Star this repository :star:
